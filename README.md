@@ -1,8 +1,9 @@
 # matlab_regression_low_flow
 Code and data used in the publication: 
+
 "Low-flow characteristics across Switzerland – Snapshot campaigns, data evaluation and regression calculations" 
 
-in order to run the code, input text fileswith response variable in the first column have to be located in all/input
+in order to run the code, input text files with response variable in the first column have to be located in all/input
 
 Code has to be excuted in the following order using R and MATLAB:
 
