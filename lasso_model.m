@@ -620,13 +620,13 @@ function [] = lasso_model(input_data,variable_names,name_response,col_num_respon
 
             % export of validation plots
 
-            if ~exist(['outputs'] ) mkdir(['outputs']); %controls if folder for outputs exists, if not, one gets made
+            if ~exist(['all/outputs'] ) mkdir(['all/outputs']); %controls if folder for outputs exists, if not, one gets made
             end
 
-            if ~exist(['outputs/lasso_validation_plots'] ) mkdir(['outputs/lasso_validation_plots']); %controls if folder for validation plots within output-folder exists, if not, one gets made
+            if ~exist(['all/outputs/lasso_validation_plots'] ) mkdir(['all/outputs/lasso_validation_plots']); %controls if folder for validation plots within output-folder exists, if not, one gets made
             end
 
-            if ~exist(fullfile('outputs/lasso_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('outputs/lasso_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
+            if ~exist(fullfile('all/outputs/lasso_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('all/outputs/lasso_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
             end
 
             for j = 1:7
@@ -664,7 +664,7 @@ function [] = lasso_model(input_data,variable_names,name_response,col_num_respon
                 end
 
 
-                plot_path = fullfile('outputs/lasso_validation_plots',strrep(filename,".txt",""),plot_name);
+                plot_path = fullfile('all/outputs/lasso_validation_plots',strrep(filename,".txt",""),plot_name);
 
                 if j*i < 14
                     print(plot_path,'-deps');
@@ -682,10 +682,10 @@ function [] = lasso_model(input_data,variable_names,name_response,col_num_respon
             outFile = strrep(strrep(filename,"InputDaten","results_"),".txt",".xls");
 
             if i==1
-                if ~exist(['outputs/lasso'] )
-                    mkdir(['outputs/lasso']); 
+                if ~exist(['all/outputs/lasso'] )
+                    mkdir(['all/outputs/lasso']); 
                 end
-                excel_path = fullfile('outputs/lasso',outFile);
+                excel_path = fullfile('all/outputs/lasso',outFile);
             end
 
             %generating the model formula
