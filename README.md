@@ -7,8 +7,8 @@ in order to run the code, input text files with response variable in the first c
 
 Code has to be excuted in the following order using R and MATLAB:
 
-1_filter_Data_zero (pre-processing of data) [R]
-2_COMPUTATION_zeroReplacement (execute MATLAB regression modelign) [MATLAB]
-3_compile_excel_output (summarize model predictions in single excel sheet) [R]
-4_Rsquared_summary (summary of regression models)[R]
-5_meanImportance_dotplot (plot random forest model variable mean importance) [R]
+1)  1_filter_Data_zero (pre-processing of data) [R]
+2)  2_COMPUTATION_zeroReplacement (execute MATLAB regression modelign) [MATLAB]
+3)  3_compile_excel_output (summarize model predictions in single excel sheet) [R]
+4)  4_Rsquared_summary (summary of regression models)[R]
+5)  5_meanImportance_dotplot (plot random forest model variable mean importance) [R]
