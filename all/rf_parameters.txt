@@ -1,0 +1,7 @@
+file	minLeaveSize	numPredictorsToSample	outlierIdx
+InputDaten_alps_C_zero.txt	1	1	1
+InputDaten_alps_Qmin_zero.txt	1	1	21
+InputDaten_alps_q95_zero.txt	1	1	21
+InputDaten_plateau_C_zero.txt	1	19	3
+InputDaten_plateau_Qmin_zero.txt	2	40	2
+InputDaten_plateau_q95_zero.txt	1	40	3
