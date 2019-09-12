@@ -28,8 +28,8 @@ lapply(names(dataList), function(region){
     colnames(all) <- c(resp,colnames(data))
     all <- all[,grep("NA",colnames(all),invert = T,value=T),with=F] # remove excel NA columns
     all <- all[1:length(quality),] # remove NA rows
-    all[is.na(all)] <- 0 # missing values will be replaced by median values
-    all_thresh <- all[quality <= 2,]
+    all[is.na(all)] <- 0 # missing values will be replaced by 0
+    all_thresh <- all[quality <= 2,] # require a quality score of at least 2
     outFile <- paste0("InputDaten_",region,"_",resp,"_zero.txt")
     write.table(all_thresh,file.path(inputDir,outFile),row.names=F,quote=F,sep="\t")
   })
