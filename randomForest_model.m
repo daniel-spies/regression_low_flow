@@ -288,7 +288,7 @@ function [] = randomForest_model(input_data,variable_names,name_response,col_num
             meanPred(row) = mean(cellfun(@(x) x(row),importance(:,i)));
         end    
         outPred = [predictor_names;num2cell(meanPred)];
-        %writetable(cell2table(outPred'),'outputs/meanImportancePredictors.txt')
+        %writetable(cell2table(outPred'),'all/outputs/meanImportancePredictors.txt')
         outFile = strcat('rf_importance/meanImportancePredictors_log_',string(i-1),'_',filename);
         fileID = fopen(outFile,'wt'); % create file and write to it
         formatSpec = '%s\t%1.4f\n';
@@ -349,10 +349,10 @@ function [] = randomForest_model(input_data,variable_names,name_response,col_num
             outFile = strrep(strrep(filename,"InputDaten","results_"),".txt",".xls");
 
             if i==1
-                if ~exist(['outputs/random_forest'] ) 
-                    mkdir(['outputs/random_forest']); 
+                if ~exist(['all/outputs/random_forest'] ) 
+                    mkdir(['all/outputs/random_forest']); 
                 end
-                excel_path = fullfile('outputs/random_forest',outFile);
+                excel_path = fullfile('all/outputs/random_forest',outFile);
             end
             
             if i == size(response_types,2)
