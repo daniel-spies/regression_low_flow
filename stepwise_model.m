@@ -574,13 +574,13 @@ for i = 1:size(response_types,2)
     
     %export of validation plots
     
-    if ~exist(['outputs\'] ) mkdir(['outputs\']); %controls if folder for outputs exists, if not, one gets made
+    if ~exist(['all/outputs\'] ) mkdir(['all/outputs\']); %controls if folder for outputs exists, if not, one gets made
     end
     
-    if ~exist(['outputs\stepwise_validation_plots\'] ) mkdir(['outputs\stepwise_validation_plots\']); %controls if folder for validation plots within output-folder exists, if not, one gets made
+    if ~exist(['all/outputs\stepwise_validation_plots\'] ) mkdir(['all/outputs\stepwise_validation_plots\']); %controls if folder for validation plots within output-folder exists, if not, one gets made
     end
     
-    if ~exist(fullfile('outputs/stepwise_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('outputs/stepwise_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
+    if ~exist(fullfile('all/outputs/stepwise_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('all/outputs/stepwise_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
     end
     
     for j = 1:6
@@ -612,7 +612,7 @@ for i = 1:size(response_types,2)
         plot_name = sprintf('leverage_vs_residualplot_log_q347_%d_interval_%d',K,L); end
     end
 
-    plot_path = fullfile('outputs/stepwise_validation_plots',strrep(filename,".txt",""),plot_name);
+    plot_path = fullfile('all/outputs/stepwise_validation_plots',strrep(filename,".txt",""),plot_name);
 
     if j*i < 12
     print(plot_path,'-deps');
@@ -633,8 +633,8 @@ for i = 1:size(response_types,2)
     outFile = strrep(strrep(filename,"InputDaten","results_"),".txt",".xls");
    
     if i==1
-        if ~exist(['outputs/stepwise'] ) mkdir(['outputs/stepwise']); end
-        excel_path = fullfile('outputs/stepwise',outFile);
+        if ~exist(['all/outputs/stepwise'] ) mkdir(['all/outputs/stepwise']); end
+        excel_path = fullfile('all/outputs/stepwise',outFile);
     end
     
     if i == size(response_types,2)
@@ -663,16 +663,6 @@ for i = 1:size(response_types,2)
     xlwrite(excel_path,{'residuals'},sprintf('stats_model_%d',count),'I8');
     xlwrite(excel_path,response_types_as_matrix(:,1),sprintf('stats_model_%d',count),'G9');
     xlwrite(excel_path,model_estimates(:,i),sprintf('stats_model_%d',count),'H9');
-    xlwrite(excel_path,residuals(:,i),sprintf('stats_model_%d',count),'I9');
-    
-    
-    
-    
+    xlwrite(excel_path,residuals(:,i),sprintf('stats_model_%d',count),'I9'); 
 end
 end
-
-
-
-
-
-
