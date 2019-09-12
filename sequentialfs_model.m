@@ -862,13 +862,13 @@ for i = 1:size(response_types,2)
     
     %export of validation plots
     
-    if ~exist(['outputs\'] ) mkdir(['outputs\']); %controls if folder for outputs exists, if not, one gets made
+    if ~exist(['all\/outputs\'] ) mkdir(['all\outputs\']); %controls if folder for outputs exists, if not, one gets made
     end
     
-    if ~exist(['outputs\sequentialfs_validation_plots\'] ) mkdir(['outputs\sequentialfs_validation_plots\']);  %controls if folder for validation plots within output-folder exists, if not, one gets made
+    if ~exist(['all\outputs\sequentialfs_validation_plots\'] ) mkdir(['all\outputs\sequentialfs_validation_plots\']);  %controls if folder for validation plots within output-folder exists, if not, one gets made
     end
     
-    if ~exist(fullfile('outputs/sequentialfs_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('outputs/sequentialfs_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
+    if ~exist(fullfile('all/outputs/sequentialfs_validation_plots',strrep(filename,".txt",""))) mkdir(fullfile('all/outputs/sequentialfs_validation_plots',strrep(filename,".txt",""))); %controls if folder for validation plots within output-folder exists, if not, one gets made
     end
     
     for j = 1:6
@@ -901,7 +901,7 @@ for i = 1:size(response_types,2)
     end
 
 
-    plot_path = fullfile('outputs/sequentialfs_validation_plots',strrep(filename,".txt",""),plot_name);
+    plot_path = fullfile('all/outputs/sequentialfs_validation_plots',strrep(filename,".txt",""),plot_name);
     
     if j*i < 12
     print(plot_path,'-deps');
@@ -922,8 +922,8 @@ for i = 1:size(response_types,2)
     outFile = strrep(strrep(filename,"InputDaten","results_"),".txt",".xls");
    
     if i==1
-        if ~exist(['outputs/sequential'] ) mkdir(['outputs/sequential']); end
-        excel_path = fullfile('outputs/sequential',outFile);
+        if ~exist(['all/outputs/sequential'] ) mkdir(['all/outputs/sequential']); end
+        excel_path = fullfile('all/outputs/sequential',outFile);
     end
     if i == size(response_types,2)
         
