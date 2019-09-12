@@ -102,6 +102,4 @@ for K = 1 : length(dinfo) %going through all given textfiles in the folder indiv
   % apply regression procedures
   randomForest_model(input_data,variable_names,name_response,col_num_response,I_response_log,I_mdl_validation_export,I_mdl_results_export,categorical,defined_categories,I_mdl_interactions,K,L,filename); %calling respective function
   lasso_model(input_data,variable_names,name_response,col_num_response,I_response_log,I_mdl_validation_export,I_mdl_results_export,categorical,defined_categories,I_mdl_interactions,K,L,filename); %calling respective function
-  sequentialfs_model(input_data,variable_names,name_response,col_num_response,I_response_log,I_mdl_validation_export,I_mdl_results_export,I_mdl_interactions,categorical,defined_categories,sequentialfs_enter_value,excel_language,K,L,filename); %calling respective function
-  stepwise_model(input_data,variable_names,name_response,col_num_response,I_response_log,I_mdl_validation_export,I_mdl_results_export,I_mdl_interactions,categorical,defined_categories,AIC_enter,AIC_remove,K,L,filename); %calling respective function
-end
+ end
