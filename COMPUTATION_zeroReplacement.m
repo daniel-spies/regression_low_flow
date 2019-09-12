@@ -88,7 +88,7 @@ sequentialfs_enter_value = 0.001;
 %%%%%%%%%%%%%%%%% NO INPUTS AND DECISIONS NEEDED FROM HERE %%%%%%%%%%%%%%%%%
 % data import
 L = 1; %no clustering, therefore only one (L=1) output-file per input
-dinfo = dir('inputs/*.txt'); %assigning that all and exclusively textfiles in the folder are considered
+dinfo = dir('all/inputs/*.txt'); %assigning that all and exclusively textfiles in the folder are considered
 for K = 1 : length(dinfo) %going through all given textfiles in the folder individually
   filename = dinfo(K).name; %assigning name of currently considered textfile
   textfile = importdata(fullfile('inputs',filename));
